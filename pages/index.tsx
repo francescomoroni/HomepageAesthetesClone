@@ -24,7 +24,6 @@ export default function Home() {
   const [showImage2, setShowImage2] = useState(false);
   const [showImage3, setShowImage3] = useState(false);
   const [showImage4, setShowImage4] = useState(false);
-  const [showImage5, setShowImage5] = useState(false);
 
   const handleEnter = (opera: number) => {
     if (opera === 1) {
@@ -42,10 +41,6 @@ export default function Home() {
       setShowImage1(false);
       setShowImage4(true);
     }
-    if (opera === 5) {
-      setShowImage1(false);
-      setShowImage5(true);
-    }
   };
 
   const handleLeave = (opera: number) => {
@@ -60,9 +55,6 @@ export default function Home() {
     }
     if (opera === 4) {
       setShowImage4(false);
-    }
-    if (opera === 5) {
-      setShowImage5(false);
     }
   };
 
@@ -143,8 +135,11 @@ export default function Home() {
         </div>
 
         {/* Main */}
-        <main className="flex flex-col justify-start flex-1 w-full h-full py-10 sm:py-24 sm:mb-16 sm:justify-between font-syne">
-          <div className="flex flex-col justify-around pl-10 space-y-10 md:space-y-0 sm:overflow-hidden md:flex-row animate-fade-in-left">
+        <p className="px-4 pt-8 text-4xl text-center font-montserrat">
+          Discover the Aesthetes ecosystem
+        </p>
+        <div className="flex flex-col justify-start flex-1 w-full h-full pb-10 sm:mb-16 sm:justify-evenly font-syne">
+          <div className="flex flex-col justify-around pl-10 space-y-10 lg:items-end md:space-y-0 sm:overflow-hidden md:flex-row animate-fade-in-left">
             <a
               href="https://marketplace.aesthetes.com/"
               onMouseEnter={() => handleEnter(1)}
@@ -154,7 +149,7 @@ export default function Home() {
               }`}
             >
               NFTs <br /> Marketplace
-              <span className="block pt-2 text-base">
+              <span className="block pt-2 text-base xl:text-lg">
                 The first Phygital NFTs marketplace, for cutting edge FineArt
                 collectors
               </span>
@@ -169,7 +164,7 @@ export default function Home() {
               height={200}
             />
             <a
-              href="https://metaverse.aesthetes.com/"
+              href="https://leonardo.aesthetes.com/"
               onMouseEnter={() => handleEnter(2)}
               onMouseLeave={() => handleLeave(2)}
               className={`main-titles ${
@@ -177,7 +172,7 @@ export default function Home() {
               } `}
             >
               Leonardo
-              <span className="block pt-2 text-base">
+              <span className="block pt-2 text-base xl:text-lg">
                 Become an Art creator minting your own collection
               </span>
             </a>
@@ -187,7 +182,7 @@ export default function Home() {
 
           <div className="flex flex-col justify-around pt-10 pl-10 space-y-10 md:space-y-0 sm:overflow-hidden md:flex-row animate-fade-in-right">
             <a
-              href="https://leonardo.aesthetes.com/"
+              href="https://gallery.aesthetes.com/"
               onMouseEnter={() => handleEnter(3)}
               onMouseLeave={() => handleLeave(3)}
               className={`main-titles ${
@@ -195,7 +190,7 @@ export default function Home() {
               }`}
             >
               Michelangelo
-              <span className="block pt-2 text-base">
+              <span className="block pt-2 text-base xl:text-lg">
                 Our Art Space in the Metaverse{" "}
               </span>
             </a>
@@ -209,12 +204,12 @@ export default function Home() {
               }`}
             >
               Magazine
-              <span className="block pt-2 text-base">
+              <span className="block pt-2 text-base xl:text-lg">
                 A window on the fine art{" "}
               </span>
             </a>
           </div>
-        </main>
+        </div>
 
         {/* Footer */}
         <footer className="footer">
@@ -224,32 +219,32 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex flex-col lg:w-1/2 lg:flex-row">
-            <div className="flex flex-1 px-2 pt-2 space-x-2 lg:pt-0 sm:space-x-6">
+          <div className="flex flex-col px-2 pt-2 lg:justify-end lg:w-1/2 lg:flex-row lg:pt-0 ">
+            <div className="flex space-x-2">
               <a
                 href="https://marketplace.aesthetes.com/legal/privacy"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="font-montserrat "
+                className="text-sm sm:text-base font-montserrat hover:underline "
               >
                 PRIVACY
               </a>
-              <p>|</p>
-              <a
-                href="https://company.aesthetes.art"
-                className="font-montserrat"
-              >
-                ABOUT US
-              </a>
-              <p>|</p>
+              <p className="text-sm sm:text-base">|</p>
               <a
                 href="https://whitepaper.aesthetes.com/whitepaper.pdf"
-                className="font-montserrat"
+                className="text-sm sm:text-base font-montserrat hover:underline"
               >
                 WHITEPAPER
               </a>
+              <p className="text-sm sm:text-base">|</p>
+              <a
+                href="https://company.aesthetes.art"
+                className="text-sm sm:text-base font-montserrat hover:underline"
+              >
+                ABOUT US
+              </a>
             </div>
-            <div className="flex px-2 pt-2 mx-auto space-x-2 lg:pt-0">
+            <div className="flex justify-center pt-2 space-x-2 lg:pl-6 lg:pt-0">
               <AiOutlineTwitter className="social-icons " />
               <AiOutlineInstagram className="social-icons " />
               <AiFillFacebook className="social-icons " />
