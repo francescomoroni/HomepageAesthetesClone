@@ -132,7 +132,7 @@ export default function Home() {
           {titles.map((title) => (
             <div
               key={title.id}
-              className="flex flex-col items-center justify-start text-center "
+              className="flex flex-col items-center justify-between text-center "
             >
               <div
                 onClick={() => handleClickLink(title.id)}
@@ -144,7 +144,7 @@ export default function Home() {
               <p className="pt-2 text-sm">{title.description}</p>
               <img
                 onClick={() => handleClickLink(title.id)}
-                className={`animate-fade-in cursor-pointer w-40 pt-2  hover:opacity-80  `}
+                className={`animate-fade-in cursor-pointer w-40 pt-2  `}
                 src={title.image}
                 alt={title.title}
               />
