@@ -14,7 +14,7 @@ import { IoIosCloseCircleOutline } from "react-icons/io";
 export default function Burger() {
   return (
     <Popover className="z-20 ">
-      <Popover.Button className="mr-2 text-white hover:scale-105 focus:outline-none lg:hidden">
+      <Popover.Button className="flex items-center mr-1 text-white hover:scale-105 focus:outline-none sm:hidden">
         <HiMenu className="w-10 h-10 " />
       </Popover.Button>
 
@@ -28,7 +28,7 @@ export default function Burger() {
         leaveTo="opacity-0 scale-95"
       >
         <div className="fixed inset-0 overflow-hidden">
-          <Popover.Panel className="fixed inset-0 flex flex-col h-screen transition origin-top-right transform bg-black ">
+          <Popover.Panel className="fixed inset-0 flex flex-col h-screen transition origin-top-right transform bg-black sm:hidden">
             {({ close }) => (
               <>
                 <div className="flex items-center justify-between px-5 pt-5">

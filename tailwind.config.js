@@ -66,7 +66,7 @@ module.exports = {
       animation: {
         downEnterLarge: "downEnterLarge 1.8s ease forwards",
         downEnterSmall: "downEnterSmall 1.8s ease forwards",
-        "fade-in": "fade-in 1.5s ease forwards",
+        "fade-in": "fade-in 3s ease forwards",
         lineIncrease: "lineIncrease 2s ease forwards",
         "fade-in-left": "fade-in-left 1.5s ease forwards",
         "fade-in-right": "fade-in-right 1.5s ease forwards",

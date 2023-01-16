@@ -6,11 +6,48 @@ import {
   AiOutlineInstagram,
   AiOutlineTwitter,
 } from "react-icons/ai";
+import { BsArrowUpRight } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import Cookies from "../components/Cookies";
 import Burger from "../components/Burger";
 
 export default function Home() {
+  const titles = [
+    {
+      id: 0,
+      title: "NFTs Marketplace",
+      description:
+        "The first Phygital NFTs marketplace, for cutting edge Fine Art collectors",
+      image: "./marketplaceR.png",
+      alt: "The Aesthetes Marketplace",
+      link: "https://marketplace.aesthetes.com/",
+    },
+    {
+      id: 1,
+      title: "Leonardo",
+      description: "Become an Art creator minting your own collection",
+      image: "./minterR.png",
+      alt: "Leonardo, our NFTs minter",
+      link: "https://leonardo.aesthetes.com/",
+    },
+    {
+      id: 2,
+      title: "Michelangelo",
+      description: "Our Art Space in the Metaverse",
+      image: "./metaverseR.png",
+      alt: "Michelangelo, our Metaverse platform",
+      link: "https://gallery.aesthetes.com/",
+    },
+    {
+      id: 3,
+      title: "Magazine",
+      description: "A window on the Fine Art industry",
+      image: "./amagzR.png",
+      alt: "The Aesthetes Magazine",
+      link: "https://magazine.aesthetes.com/",
+    },
+  ];
+
   const [cookiesOpen, setCookiesOpen] = useState(false);
 
   useEffect(() => {
@@ -20,54 +57,54 @@ export default function Home() {
     }
   }, []);
 
-  const [showImage1, setShowImage1] = useState(true);
+  const [showImage0, setShowImage0] = useState(true);
+  const [showImage1, setShowImage1] = useState(false);
   const [showImage2, setShowImage2] = useState(false);
   const [showImage3, setShowImage3] = useState(false);
-  const [showImage4, setShowImage4] = useState(false);
 
   const handleEnter = (opera: number) => {
-    if (opera === 1) {
+    if (opera === 0) {
+      setShowImage1(false);
       setShowImage2(false);
       setShowImage3(false);
-      setShowImage4(false);
+
+      setShowImage0(true);
+    }
+    if (opera === 1) {
+      setShowImage0(false);
+      setShowImage2(false);
+      setShowImage3(false);
 
       setShowImage1(true);
     }
     if (opera === 2) {
+      setShowImage0(false);
       setShowImage1(false);
       setShowImage3(false);
-      setShowImage4(false);
 
       setShowImage2(true);
     }
     if (opera === 3) {
+      setShowImage0(false);
       setShowImage1(false);
       setShowImage2(false);
-      setShowImage4(false);
 
       setShowImage3(true);
     }
-    if (opera === 4) {
-      setShowImage1(false);
-      setShowImage2(false);
-      setShowImage3(false);
-
-      setShowImage4(true);
-    }
   };
 
-  const handleLeave = (opera: number) => {
+  const handleClickLink = (opera: number) => {
+    if (opera === 0) {
+      window.open("https://marketplace.aesthetes.com/");
+    }
     if (opera === 1) {
-      setShowImage1(false);
+      window.open("https://leonardo.aesthetes.com/");
     }
     if (opera === 2) {
-      setShowImage2(false);
+      window.open("https://gallery.aesthetes.com/");
     }
     if (opera === 3) {
-      setShowImage3(false);
-    }
-    if (opera === 4) {
-      setShowImage4(false);
+      window.open("https://magazine.aesthetes.com/");
     }
   };
 
@@ -77,157 +114,157 @@ export default function Home() {
 
       <Head>
         <title>Aesthetes ecosystem</title>
-        <meta name="description" content="Aesthetes portal ecosystem" />
+        <meta name="description" content="Aesthetes homepage ecosystem" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className="relative flex flex-col min-h-screen bg-white ">
         {/* Header */}
-        <header className="flex items-center py-4 bg-black shadow-xl">
-          <img
-            src="./logo_registrato.png"
-            className="max-w-sm mx-auto"
-            alt=""
-          />
+        <header className="flex items-center justify-between px-2 py-4 bg-black shadow-xl">
+          <img src="./logo_registrato.png" className="w-60 sm:mx-auto" alt="" />
           <Burger />
         </header>
+        <p className="description">Discover our Fine Art ecosystem</p>
 
-        {/* Images */}
-        <div className="">
+        {/* Main < SM*/}
+        <div className="grid grid-cols-2 px-4 sm:hidden font-montserrat">
+          {titles.map((title) => (
+            <div
+              key={title.id}
+              className="flex flex-col items-center justify-start p-4 mt-4 text-center "
+            >
+              <div
+                onClick={() => handleClickLink(title.id)}
+                className="flex items-center justify-between cursor-pointer"
+              >
+                <h1 className="text-2xl font-bold">{title.title}</h1>
+                <BsArrowUpRight className="pl-1" />
+              </div>
+              <p className="pt-2 text-sm">{title.description}</p>
+              <img
+                onClick={() => handleClickLink(title.id)}
+                className={`animate-fade-in cursor-pointer w-40 pt-2 rounded-xl shadow-xl hover:opacity-80  `}
+                src={title.image}
+                alt={title.title}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Images > SM  */}
+        <div>
           {/* Marketplace */}
           <img
             className={`images 2xl:max-w-md 2xl:top-1/4 md:max-w-[15rem] md:ml-2 md:bottom-1/3 md:left-1/2 lg:right-1/4 lg:top-1/3 xl:max-w-sm lg:max-w-[18rem]  sm:max-w-[18rem] sm:bottom-36 sm:right-2
             ${
-              showImage1
+              showImage0
                 ? "opacity-100 "
                 : "opacity-0 scale-y-110 skew-y-3 transition-none -z-10 "
             } `}
-            src="./marketplaceR.png"
-            alt="Aesthetes Marketplace"
+            src={titles[0].image}
+            alt={titles[0].alt}
           />
 
           {/* Michelangelo */}
           <img
             className={`images 2xl:max-w-xl 2xl:left-1/3 lg:left-1/2 lg:top-1/4 xl:max-w-lg lg:max-w-md md:max-w-xs md:bottom-1/3 md:right-1/4 sm:max-w-[18rem] sm:bottom-36 sm:right-2
             ${
-              showImage3
+              showImage2
                 ? "opacity-100"
                 : "opacity-0 scale-y-110 skew-y-3 transition-none -z-10"
             } `}
-            src="./metaverseR.png"
-            alt="Michelangelo, our Metaverse platform"
+            src={titles[2].image}
+            alt={titles[2].alt}
           />
 
           {/* Leonardo */}
           <img
             className={`images 2xl:left-1/2 lg:left-1/3 lg:top-1/4 lg:max-w-sm xl:max-w-md md:max-w-xs md:bottom-1/3 md:right-1/4 sm:max-w-[18rem] sm:bottom-36 sm:right-2
             ${
-              showImage2
+              showImage1
                 ? "opacity-100"
                 : "transition-none -z-10 opacity-0 scale-y-110 skew-y-3"
             } `}
-            src="./minterR.png"
-            alt="Leonardo, our NFTs minter"
+            src={titles[1].image}
+            alt={titles[1].alt}
           />
 
           {/* Magazine */}
           <img
             className={`images 2xl:max-w-lg lg:left-1/3 lg:top-1/4 lg:max-w-md md:max-w-xs md:bottom-1/3 md:right-1/4 sm:max-w-[18rem] sm:bottom-36 sm:right-2
             ${
-              showImage4
+              showImage3
                 ? "opacity-100"
                 : "transition-none -z-10 opacity-0 scale-y-110 skew-y-3"
             } `}
-            src="./amagzR.png"
-            alt="The Aesthetes Magazine"
+            src={titles[3].image}
+            alt={titles[3].alt}
           />
         </div>
 
-        {/* Main */}
-        <p className="px-4 pt-8 text-4xl text-center font-montserrat">
-          Discover our Fine Art ecosystem
-        </p>
-        <div className="flex flex-col justify-start flex-1 w-full h-full pb-10 sm:mb-16 sm:justify-evenly font-montserrat">
-          <div className="flex flex-col justify-around pl-10 space-y-10 md:items-end md:space-y-0 sm:overflow-hidden md:flex-row animate-fade-in-left">
+        {/* Main > SM*/}
+        <div className="flex-col justify-start flex-1 hidden w-full h-full px-10 pb-16 sm:flex sm:mb-16 sm:justify-around font-montserrat">
+          <div className="flex flex-col justify-between space-y-10 xl:justify-around md:items-end md:space-y-0 md:flex-row animate-fade-in-left">
+            {" "}
             <a
-              href="https://marketplace.aesthetes.com/"
-              onMouseEnter={() => handleEnter(1)}
-              //onMouseLeave={() => handleLeave(1)}
+              href={titles[0].link}
+              onMouseEnter={() => handleEnter(0)}
               className={`main-titles ${
-                showImage1 ? "text-black" : "text-[#ccc]"
+                showImage0 ? "text-black" : "text-[#ccc]"
               }`}
             >
               NFTs <br /> Marketplace
-              <span className="pr-20 subtitles">
-                The first Phygital NFTs marketplace, for cutting edge Fine Art
-                collectors
-              </span>
+              <span className=" subtitles">{titles[0].description}</span>
             </a>
-            <img
-              className={` 
-            sm:hidden
-               `}
-              src="./marketplace.png"
-              alt=""
-              width={200}
-              height={200}
-            />
             <a
-              href="https://leonardo.aesthetes.com/"
-              onMouseEnter={() => handleEnter(2)}
-              //onMouseLeave={() => handleLeave(2)}
+              href={titles[1].link}
+              onMouseEnter={() => handleEnter(1)}
               className={`main-titles ${
-                showImage2 ? "text-black" : "text-[#ccc] "
+                showImage1 ? "text-black" : "text-[#ccc] "
               } `}
             >
-              Leonardo
-              <span className="subtitles">
-                Become an Art creator minting your own collection
-              </span>
+              {titles[1].title}
+              <span className="subtitles">{titles[1].description}</span>
             </a>
           </div>
 
           <div className="hidden mx-auto border-t border-black sm:block animate-lineIncrease"></div>
 
-          <div className="flex flex-col justify-around pt-10 pl-10 space-y-10 md:space-y-0 sm:overflow-hidden md:flex-row animate-fade-in-right">
+          <div className="flex flex-col justify-between pt-10 space-y-10 xl:justify-around md:items-end md:space-y-0 md:flex-row animate-fade-in-right">
             <a
-              href="https://gallery.aesthetes.com/"
+              href={titles[2].link}
+              onMouseEnter={() => handleEnter(2)}
+              className={`main-titles ${
+                showImage2 ? "text-black" : "text-[#ccc]"
+              }`}
+            >
+              {titles[2].title}
+              <span className="subtitles">{titles[2].description}</span>
+            </a>
+
+            <a
+              href={titles[3].link}
               onMouseEnter={() => handleEnter(3)}
-              //onMouseLeave={() => handleLeave(3)}
               className={`main-titles ${
                 showImage3 ? "text-black" : "text-[#ccc]"
               }`}
             >
-              Michelangelo
-              <span className="subtitles">Our Art Space in the Metaverse </span>
-            </a>
-
-            <a
-              href="https://magazine.aesthetes.com/"
-              onMouseEnter={() => handleEnter(4)}
-              //onMouseLeave={() => handleLeave(4)}
-              className={`main-titles ${
-                showImage4 ? "text-black" : "text-[#ccc]"
-              }`}
-            >
-              Magazine
-              <span className="subtitles">
-                A window on the Fine Art industry{" "}
-              </span>
+              {titles[3].title}
+              <span className="subtitles">{titles[3].description}</span>
             </a>
           </div>
         </div>
 
         {/* Footer */}
-        <footer className="footer">
-          <div className="lg:w-1/2">
-            <p className="text-xs text-center sm:text-sm lg:text-left">
+        <footer className="footer ">
+          <div className="order-2 lg:order-none lg:w-1/2">
+            <p className="pt-2 text-xs text-center sm:text-sm lg:text-left">
               Copyright © 2023 Aesthetes S.r.l. - P.I. 12066980967
             </p>
           </div>
 
-          <div className="flex flex-col px-2 pt-2 lg:justify-end lg:w-1/2 lg:flex-row lg:pt-0 ">
+          <div className="flex flex-col px-2 lg:justify-end lg:w-1/2 lg:flex-row lg:pt-0 ">
             <div className="flex space-x-2">
               <a
                 href="https://marketplace.aesthetes.com/legal/privacy"
