@@ -128,11 +128,11 @@ export default function Home() {
         <p className="description">Discover our Fine Art ecosystem</p>
 
         {/* Main < SM*/}
-        <div className="grid grid-cols-2 gap-4 p-4 sm:hidden font-montserrat">
+        <div className="grid grid-cols-2 gap-4 p-4 sm:hidden font-montserrat ">
           {titles.map((title) => (
             <div
               key={title.id}
-              className="flex flex-col items-center justify-between text-center "
+              className="flex flex-col items-center justify-between col-span-2 text-center"
             >
               <div
                 onClick={() => handleClickLink(title.id)}
@@ -148,6 +148,7 @@ export default function Home() {
                 src={title.image}
                 alt={title.title}
               />
+              <div className="mx-auto mt-2 border-t border-black/50 animate-lineIncrease"></div>
             </div>
           ))}
         </div>
