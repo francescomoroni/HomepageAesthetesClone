@@ -128,11 +128,11 @@ export default function Home() {
         <p className="description">Discover our Fine Art ecosystem</p>
 
         {/* Main < SM*/}
-        <div className="grid grid-cols-2 gap-4 p-4 sm:hidden font-montserrat ">
+        <div className="grid grid-cols-1 gap-4 p-4 sm:hidden font-montserrat ">
           {titles.map((title) => (
             <div
               key={title.id}
-              className="flex flex-col items-center justify-between col-span-2 text-center"
+              className="flex flex-col items-center justify-between text-center"
             >
               <div
                 onClick={() => handleClickLink(title.id)}
@@ -144,11 +144,15 @@ export default function Home() {
               <p className="pt-2 text-sm">{title.description}</p>
               <img
                 onClick={() => handleClickLink(title.id)}
-                className={`animate-fade-in cursor-pointer w-40 pt-2  `}
+                className={`animate-fade-in h-40 w-40 object-cover object-contain cursor-pointer pt-2  `}
                 src={title.image}
                 alt={title.title}
               />
-              <div className="mx-auto mt-2 border-t border-black/50 animate-lineIncrease"></div>
+              <div
+                className={`${
+                  title.id != 3 ? "block" : "hidden"
+                } mx-auto mt-2 border-t border-black/50 animate-lineIncrease`}
+              ></div>
             </div>
           ))}
         </div>
@@ -230,7 +234,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="hidden mx-auto border-t border-black sm:block animate-lineIncrease"></div>
+          <div className="hidden mx-auto border-t border-black md:block animate-lineIncrease"></div>
 
           <div className="flex flex-col justify-between pt-10 space-y-10 xl:justify-around md:items-end md:space-y-0 md:flex-row animate-fade-in-right">
             <a
