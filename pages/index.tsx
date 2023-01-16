@@ -21,24 +21,37 @@ export default function Home() {
   }, []);
 
   const [showImage1, setShowImage1] = useState(true);
-  const [showImage2, setShowImage2] = useState(false);
-  const [showImage3, setShowImage3] = useState(false);
-  const [showImage4, setShowImage4] = useState(false);
+  const [showImage2, setShowImage2] = useState(true);
+  const [showImage3, setShowImage3] = useState(true);
+  const [showImage4, setShowImage4] = useState(true);
 
   const handleEnter = (opera: number) => {
     if (opera === 1) {
+      setShowImage2(false);
+      setShowImage3(false);
+      setShowImage4(false);
+
       setShowImage1(true);
     }
     if (opera === 2) {
       setShowImage1(false);
+      setShowImage3(false);
+      setShowImage4(false);
+
       setShowImage2(true);
     }
     if (opera === 3) {
       setShowImage1(false);
+      setShowImage2(false);
+      setShowImage4(false);
+
       setShowImage3(true);
     }
     if (opera === 4) {
       setShowImage1(false);
+      setShowImage2(false);
+      setShowImage3(false);
+
       setShowImage4(true);
     }
   };
@@ -82,75 +95,72 @@ export default function Home() {
 
         {/* Images */}
         <div className="">
+          {/* Marketplace */}
           <img
-            className={`images right-15 
+            className={`images 2xl:max-w-md 2xl:top-1/4 md:max-w-[15rem] md:ml-2 md:bottom-1/3 md:left-1/2 lg:right-1/4 lg:top-1/3 xl:max-w-sm lg:max-w-[18rem]  sm:max-w-[18rem] sm:bottom-36 sm:right-2
             ${
               showImage1
                 ? "opacity-100 "
                 : "opacity-0 scale-y-110 skew-y-3 transition-none -z-10 "
             } `}
-            src="./marketplace.png"
-            alt=""
-            width={400}
-            height={400}
+            src="./marketplaceR.png"
+            alt="Aesthetes Marketplace"
           />
 
+          {/* Michelangelo */}
           <img
-            className={`images  
+            className={`images 2xl:max-w-xl 2xl:left-1/3 lg:left-1/2 lg:top-1/4 xl:max-w-lg lg:max-w-md md:max-w-xs md:bottom-1/3 md:right-1/4 sm:max-w-[18rem] sm:bottom-36 sm:right-2
             ${
               showImage3
                 ? "opacity-100"
                 : "opacity-0 scale-y-110 skew-y-3 transition-none -z-10"
             } `}
-            src="./metaverse.png"
-            alt=""
-            width={600}
-            height={600}
+            src="./metaverseR.png"
+            alt="Michelangelo, our Metaverse platform"
           />
 
+          {/* Leonardo */}
           <img
-            className={`images 
+            className={`images 2xl:left-1/2 lg:left-1/3 lg:top-1/4 lg:max-w-sm xl:max-w-md md:max-w-xs md:bottom-1/3 md:right-1/4 sm:max-w-[18rem] sm:bottom-36 sm:right-2
             ${
               showImage2
                 ? "opacity-100"
                 : "transition-none -z-10 opacity-0 scale-y-110 skew-y-3"
             } `}
-            src="./minter.png"
-            alt=""
-            width={600}
-            height={600}
+            src="./minterR.png"
+            alt="Leonardo, our NFTs minter"
           />
+
+          {/* Magazine */}
           <img
-            className={`images 
+            className={`images 2xl:max-w-lg  lg:left-1/3 lg:top-1/4 lg:max-w-md md:max-w-xs md:bottom-1/3 md:right-1/4 sm:max-w-[18rem] sm:bottom-36 sm:right-2
             ${
               showImage4
                 ? "opacity-100"
                 : "transition-none -z-10 opacity-0 scale-y-110 skew-y-3"
             } `}
-            src="./amagz.png"
-            alt=""
-            width={600}
-            height={600}
+            src="./amagzR.png"
+            alt="The Aesthetes Magazine"
           />
         </div>
 
         {/* Main */}
         <p className="px-4 pt-8 text-4xl text-center font-montserrat">
-          Discover the Aesthetes ecosystem
+          Discover our Fine Art ecosystem
         </p>
-        <div className="flex flex-col justify-start flex-1 w-full h-full pb-10 sm:mb-16 sm:justify-evenly font-syne">
-          <div className="flex flex-col justify-around pl-10 space-y-10 lg:items-end md:space-y-0 sm:overflow-hidden md:flex-row animate-fade-in-left">
+        <div className="flex flex-col justify-start flex-1 w-full h-full pb-10 sm:mb-16 sm:justify-evenly font-montserrat">
+          <div className="flex flex-col justify-around pl-10 space-y-10 md:items-end md:space-y-0 sm:overflow-hidden md:flex-row animate-fade-in-left">
             <a
               href="https://marketplace.aesthetes.com/"
               onMouseEnter={() => handleEnter(1)}
-              onMouseLeave={() => handleLeave(1)}
+              //onMouseLeave={() => handleLeave(1)}
               className={`main-titles ${
                 showImage1 ? "text-black" : "text-[#ccc]"
               }`}
             >
               NFTs <br /> Marketplace
-              <span className="block pt-2 text-base xl:text-lg">
-                The first Phygital NFTs marketplace, for cutting edge FineArt
+              <span className="pr-20 subtitles">
+                The first Phygital NFTs marketplace, for cutting edge Fine Art
                 collectors
               </span>
             </a>
@@ -166,13 +176,13 @@ export default function Home() {
             <a
               href="https://leonardo.aesthetes.com/"
               onMouseEnter={() => handleEnter(2)}
-              onMouseLeave={() => handleLeave(2)}
+              //onMouseLeave={() => handleLeave(2)}
               className={`main-titles ${
                 showImage2 ? "text-black" : "text-[#ccc] "
               } `}
             >
               Leonardo
-              <span className="block pt-2 text-base xl:text-lg">
+              <span className="subtitles">
                 Become an Art creator minting your own collection
               </span>
             </a>
@@ -184,28 +194,26 @@ export default function Home() {
             <a
               href="https://gallery.aesthetes.com/"
               onMouseEnter={() => handleEnter(3)}
-              onMouseLeave={() => handleLeave(3)}
+              //onMouseLeave={() => handleLeave(3)}
               className={`main-titles ${
                 showImage3 ? "text-black" : "text-[#ccc]"
               }`}
             >
               Michelangelo
-              <span className="block pt-2 text-base xl:text-lg">
-                Our Art Space in the Metaverse{" "}
-              </span>
+              <span className="subtitles">Our Art Space in the Metaverse </span>
             </a>
 
             <a
               href="https://magazine.aesthetes.com/"
               onMouseEnter={() => handleEnter(4)}
-              onMouseLeave={() => handleLeave(4)}
+              //onMouseLeave={() => handleLeave(4)}
               className={`main-titles ${
                 showImage4 ? "text-black" : "text-[#ccc]"
               }`}
             >
               Magazine
-              <span className="block pt-2 text-base xl:text-lg">
-                A window on the fine art{" "}
+              <span className="subtitles">
+                A window on the Fine Art industry{" "}
               </span>
             </a>
           </div>
