@@ -21,9 +21,9 @@ export default function Home() {
   }, []);
 
   const [showImage1, setShowImage1] = useState(true);
-  const [showImage2, setShowImage2] = useState(true);
-  const [showImage3, setShowImage3] = useState(true);
-  const [showImage4, setShowImage4] = useState(true);
+  const [showImage2, setShowImage2] = useState(false);
+  const [showImage3, setShowImage3] = useState(false);
+  const [showImage4, setShowImage4] = useState(false);
 
   const handleEnter = (opera: number) => {
     if (opera === 1) {
@@ -133,7 +133,7 @@ export default function Home() {
 
           {/* Magazine */}
           <img
-            className={`images 2xl:max-w-lg  lg:left-1/3 lg:top-1/4 lg:max-w-md md:max-w-xs md:bottom-1/3 md:right-1/4 sm:max-w-[18rem] sm:bottom-36 sm:right-2
+            className={`images 2xl:max-w-lg lg:left-1/3 lg:top-1/4 lg:max-w-md md:max-w-xs md:bottom-1/3 md:right-1/4 sm:max-w-[18rem] sm:bottom-36 sm:right-2
             ${
               showImage4
                 ? "opacity-100"
