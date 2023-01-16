@@ -128,11 +128,11 @@ export default function Home() {
         <p className="description">Discover our Fine Art ecosystem</p>
 
         {/* Main < SM*/}
-        <div className="grid grid-cols-2 px-4 sm:hidden font-montserrat">
+        <div className="grid grid-cols-2 gap-4 p-4 sm:hidden font-montserrat">
           {titles.map((title) => (
             <div
               key={title.id}
-              className="flex flex-col items-center justify-start p-4 mt-4 text-center "
+              className="flex flex-col items-center justify-start text-center "
             >
               <div
                 onClick={() => handleClickLink(title.id)}
@@ -144,7 +144,7 @@ export default function Home() {
               <p className="pt-2 text-sm">{title.description}</p>
               <img
                 onClick={() => handleClickLink(title.id)}
-                className={`animate-fade-in cursor-pointer w-40 pt-2 rounded-xl shadow-xl hover:opacity-80  `}
+                className={`animate-fade-in cursor-pointer w-40 pt-2  hover:opacity-80  `}
                 src={title.image}
                 alt={title.title}
               />
@@ -256,8 +256,51 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Footer */}
-        <footer className="footer ">
+        {/* Footer < SM*/}
+        <footer className="footerSM ">
+          <div className="order-2 lg:order-none lg:w-1/2">
+            <p className="pt-2 text-xs text-center sm:text-sm lg:text-left">
+              Copyright © 2023 Aesthetes S.r.l. - P.I. 12066980967
+            </p>
+          </div>
+
+          <div className="flex flex-col px-2 lg:justify-end lg:w-1/2 lg:flex-row lg:pt-0 ">
+            <div className="flex space-x-2">
+              <a
+                href="https://marketplace.aesthetes.com/legal/privacy"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="text-sm sm:text-base font-montserrat hover:underline "
+              >
+                PRIVACY
+              </a>
+              <p className="text-sm sm:text-base">|</p>
+              <a
+                href="https://whitepaper.aesthetes.com/whitepaper.pdf"
+                className="text-sm sm:text-base font-montserrat hover:underline"
+              >
+                WHITEPAPER
+              </a>
+              <p className="text-sm sm:text-base">|</p>
+              <a
+                href="https://company.aesthetes.art"
+                className="text-sm sm:text-base font-montserrat hover:underline"
+              >
+                ABOUT US
+              </a>
+            </div>
+            <div className="flex justify-center pt-2 space-x-2 lg:pl-6 lg:pt-0">
+              <AiOutlineTwitter className="social-icons " />
+              <AiOutlineInstagram className="social-icons " />
+              <AiFillFacebook className="social-icons " />
+              <AiFillLinkedin className="social-icons " />
+              <AiFillYoutube className="social-icons " />
+            </div>
+          </div>
+        </footer>
+
+        {/* Footer > SM */}
+        <footer className="footerLG ">
           <div className="order-2 lg:order-none lg:w-1/2">
             <p className="pt-2 text-xs text-center sm:text-sm lg:text-left">
               Copyright © 2023 Aesthetes S.r.l. - P.I. 12066980967

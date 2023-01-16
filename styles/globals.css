@@ -17,8 +17,11 @@
   .images {
     @apply absolute z-10 hidden transition-all duration-300 ease-out transform sm:block ;
   }
-  .footer{
-    @apply absolute inset-x-0 bottom-0 z-20 flex flex-col items-center justify-between p-4 overflow-hidden bg-black text-white/80 lg:flex-row;
+  .footerLG{
+    @apply absolute inset-x-0 bottom-0 z-20 flex-col items-center justify-between hidden p-4 overflow-hidden bg-black sm:flex text-white/80 lg:flex-row;
+  }
+  .footerSM{
+    @apply z-20 flex flex-col items-center justify-between p-4 overflow-hidden bg-black text-white/80 sm:hidden;
   }
   .description{
     @apply px-4 pt-6 text-2xl text-center sm:pt-8 md:text-4xl font-montserrat;
