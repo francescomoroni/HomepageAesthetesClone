@@ -57,7 +57,7 @@ export default function Home() {
     }
   }, []);
 
-  const [showImage0, setShowImage0] = useState(true);
+  const [showImage0, setShowImage0] = useState(false);
   const [showImage1, setShowImage1] = useState(false);
   const [showImage2, setShowImage2] = useState(false);
   const [showImage3, setShowImage3] = useState(false);
@@ -119,55 +119,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* Images > SM  */}
-      {/* Marketplace */}
-      <img
-        className={`images       
-            ${
-              showImage0
-                ? "opacity-100 "
-                : "opacity-0 scale-y-110 skew-y-3 transition-none -z-10 "
-            } `}
-        src={titles[0].image}
-        alt={titles[0].alt}
-      />
-
-      {/* Michelangelo */}
-      <img
-        className={`images         
-            ${
-              showImage2
-                ? "opacity-100"
-                : "opacity-0 scale-y-110 skew-y-3 transition-none -z-10"
-            } `}
-        src={titles[2].image}
-        alt={titles[2].alt}
-      />
-
-      {/* Leonardo */}
-      <img
-        className={`images      
-            ${
-              showImage1
-                ? "opacity-100"
-                : "transition-none -z-10 opacity-0 scale-y-110 skew-y-3"
-            } `}
-        src={titles[1].image}
-        alt={titles[1].alt}
-      />
-
-      {/* Magazine */}
-      <img
-        className={`images     
-            ${
-              showImage3
-                ? "opacity-100"
-                : "transition-none -z-10 opacity-0 scale-y-110 skew-y-3"
-            } `}
-        src={titles[3].image}
-        alt={titles[3].alt}
-      />
-
       <div className="relative flex flex-col min-h-screen ">
         {/* Header */}
         <header className="relative flex items-center justify-between px-2 py-4 bg-black shadow-xl">
@@ -210,55 +161,113 @@ export default function Home() {
           ))}
         </div>
 
+        {/* Images > SM  */}
+        <div>
+          {/* Marketplace */}
+          <img
+            className={`images       
+            ${
+              showImage0
+                ? "opacity-100 "
+                : "opacity-0 scale-y-110 skew-y-3 transition-none -z-10 "
+            } `}
+            src={titles[0].image}
+            alt={titles[0].alt}
+          />
+
+          {/* Michelangelo */}
+          <img
+            className={`images         
+            ${
+              showImage2
+                ? "opacity-100"
+                : "opacity-0 scale-y-110 skew-y-3 transition-none -z-10"
+            } `}
+            src={titles[2].image}
+            alt={titles[2].alt}
+          />
+
+          {/* Leonardo */}
+          <img
+            className={`images      
+            ${
+              showImage1
+                ? "opacity-100"
+                : "transition-none -z-10 opacity-0 scale-y-110 skew-y-3"
+            } `}
+            src={titles[1].image}
+            alt={titles[1].alt}
+          />
+
+          {/* Magazine */}
+          <img
+            className={`images     
+            ${
+              showImage3
+                ? "opacity-100"
+                : "transition-none -z-10 opacity-0 scale-y-110 skew-y-3"
+            } `}
+            src={titles[3].image}
+            alt={titles[3].alt}
+          />
+        </div>
+
         {/* Main > SM*/}
         <div className="flex-col justify-start flex-1 hidden w-full h-full px-10 pb-16 sm:flex sm:mb-16 sm:justify-around font-montserrat">
-          <div className="flex flex-col justify-between space-y-10 2xl:justify-around md:items-end md:space-y-0 md:flex-row animate-fade-in-left">
+          <div className="flex flex-col justify-between space-y-10 md:items-end md:space-y-0 md:flex-row animate-fade-in-left">
             {" "}
             <a
               href={titles[0].link}
               onMouseEnter={() => handleEnter(0)}
-              className={`main-titles ${
+              className={` main-titles  items-start  ${
                 showImage0 ? "text-black" : "text-[#ccc]"
               }`}
             >
-              NFTs <br /> Marketplace
-              <span className="subtitles">{titles[0].description}</span>
+              {titles[0].title}
+
+              <span className="items-start pl-2 subtitles">
+                {titles[0].description}
+              </span>
             </a>
             <a
               href={titles[1].link}
               onMouseEnter={() => handleEnter(1)}
-              className={`main-titles ${
+              className={`main-titles items-start md:items-end ${
                 showImage1 ? "text-black" : "text-[#ccc] "
               } `}
             >
               {titles[1].title}
-              <span className="subtitles">{titles[1].description}</span>
+              <span className="text-right subtitles">
+                {titles[1].description}
+              </span>
             </a>
           </div>
 
           <div className="hidden mx-auto border-t border-[#ccc] sm:block animate-lineIncrease"></div>
 
-          <div className="flex flex-col justify-between pt-10 space-y-10 2xl:justify-around md:items-end md:space-y-0 md:flex-row animate-fade-in-right">
+          <div className="flex flex-col justify-between pt-10 space-y-10 md:items-end md:space-y-0 md:flex-row animate-fade-in-right">
             <a
               href={titles[2].link}
               onMouseEnter={() => handleEnter(2)}
-              className={`main-titles ${
+              className={`main-titles  items-start   ${
                 showImage2 ? "text-black" : "text-[#ccc]"
               }`}
             >
               {titles[2].title}
-              <span className="subtitles">{titles[2].description}</span>
+              <span className="pl-2 subtitles">{titles[2].description}</span>
             </a>
 
             <a
               href={titles[3].link}
               onMouseEnter={() => handleEnter(3)}
-              className={`main-titles ${
+              className={`main-titles items-start md:items-end ${
                 showImage3 ? "text-black" : "text-[#ccc]"
               }`}
             >
               {titles[3].title}
-              <span className="subtitles">{titles[3].description}</span>
+              <span className="text-right subtitles">
+                {titles[3].description}
+              </span>
             </a>
           </div>
         </div>
