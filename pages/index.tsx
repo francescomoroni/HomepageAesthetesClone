@@ -125,7 +125,8 @@ export default function Home() {
           <img src="./logo_registrato.png" className="w-60 sm:mx-auto" alt="" />
           <Burger />
         </header>
-        <p className="description">Discover our Fine Art ecosystem</p>
+        <p className="subtitleLG">Discover our Fine Art ecosystem</p>
+        <p className="subtitleSM">Discover our Fine Art ecosystem</p>
 
         {/* Main < SM*/}
         <div className="grid max-w-md grid-cols-1 gap-4 p-4 mx-auto sm:hidden font-montserrat ">
