@@ -121,8 +121,12 @@ export default function Home() {
 
       <div className="relative flex flex-col min-h-screen bg-white ">
         {/* Header */}
-        <header className="flex items-center justify-between px-2 py-4 bg-black shadow-xl">
-          <img src="./logo_registrato.png" className="w-60 sm:mx-auto" alt="" />
+        <header className="relative flex items-center justify-between px-2 py-4 bg-black shadow-xl">
+          <img
+            src="./logo_registrato.png"
+            className="w-40 mx-auto sm:w-60"
+            alt=""
+          />
           <Burger />
         </header>
         <p className="subtitleLG">Discover our Fine Art ecosystem</p>
