@@ -137,18 +137,18 @@ export default function Home() {
           {titles.map((title) => (
             <div
               key={title.id}
-              className="flex flex-col items-center justify-between p-4 text-center border cursor-pointer rounded-xl bg-rosino/10 hover:bg-rosino/30"
+              className="flex flex-col items-center justify-between p-4 text-center border cursor-pointer rounded-xl bg-rosino/10 hover:bg-rosino/30 group"
               onClick={() => handleClickLink(title.id)}
             >
               <div className="flex items-center justify-between animate-fade-in-left">
                 <h1 className="text-2xl font-bold">{title.title}</h1>
                 <BsArrowUpRight className="pl-1" />
               </div>
-              <p className="pt-2 text-sm animate-fade-in-right">
+              <p className="pt-2 text-sm animate-fade-in-right group-hover:underline">
                 {title.description}
               </p>
               <img
-                className={`animate-fade-in h-72 w-72   `}
+                className={`animate-fade-in h-60 mt-2   `}
                 src={title.image}
                 alt={title.title}
               />
@@ -245,7 +245,7 @@ export default function Home() {
 
           <div className="hidden mx-auto border-t border-[#ccc] sm:block animate-lineIncrease"></div>
 
-          <div className="flex flex-col justify-between pt-10 space-y-10 md:items-end md:space-y-0 md:flex-row animate-fade-in-right">
+          <div className="flex flex-col justify-between pt-10 space-y-10 md:items-end md:space-y-0 md:space-x-4 lg:space-x-0 md:flex-row animate-fade-in-right">
             <a
               href={titles[2].link}
               onMouseEnter={() => handleEnter(2)}
