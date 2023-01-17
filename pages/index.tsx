@@ -18,7 +18,7 @@ export default function Home() {
       title: "NFTs Marketplace",
       description:
         "The first Phygital NFTs marketplace, for cutting edge Fine Art collectors",
-      image: "./marketplaceR.png",
+      image: "./marketplace.png",
       alt: "The Aesthetes Marketplace",
       link: "https://marketplace.aesthetes.com/",
     },
@@ -26,7 +26,7 @@ export default function Home() {
       id: 1,
       title: "Leonardo",
       description: "Become an Art creator minting your own collection",
-      image: "./minterR.png",
+      image: "./leonardo.png",
       alt: "Leonardo, our NFTs minter",
       link: "https://leonardo.aesthetes.com/",
     },
@@ -34,7 +34,7 @@ export default function Home() {
       id: 2,
       title: "Michelangelo",
       description: "Our Art Space in the Metaverse",
-      image: "./metaverseR.png",
+      image: "./metaverse.png",
       alt: "Michelangelo, our Metaverse platform",
       link: "https://gallery.aesthetes.com/",
     },
@@ -42,7 +42,7 @@ export default function Home() {
       id: 3,
       title: "Magazine",
       description: "A window on the Fine Art industry",
-      image: "./amagzR.png",
+      image: "./magazine.png",
       alt: "The Aesthetes Magazine",
       link: "https://magazine.aesthetes.com/",
     },
@@ -148,7 +148,7 @@ export default function Home() {
                 {title.description}
               </p>
               <img
-                className={`animate-fade-in h-40 w-40 object-cover object-contain mt-4  `}
+                className={`animate-fade-in h-52 w-52 object-cover object-contain mt-2  `}
                 src={title.image}
                 alt={title.title}
               />
@@ -165,7 +165,7 @@ export default function Home() {
         <div>
           {/* Marketplace */}
           <img
-            className={`images 2xl:max-w-md 2xl:top-1/4 md:max-w-[15rem] md:ml-2 md:bottom-1/3 md:left-1/2 lg:right-1/4 lg:top-1/3 xl:max-w-sm lg:max-w-[18rem]  sm:max-w-[18rem] sm:bottom-36 sm:right-2
+            className={`images lg:translate-x-1/3      
             ${
               showImage0
                 ? "opacity-100 "
@@ -177,7 +177,7 @@ export default function Home() {
 
           {/* Michelangelo */}
           <img
-            className={`images 2xl:max-w-xl 2xl:left-1/3 lg:left-1/2 lg:top-1/4 xl:max-w-lg lg:max-w-md md:max-w-xs md:bottom-1/3 md:right-1/4 sm:max-w-[18rem] sm:bottom-36 sm:right-2
+            className={`images lg:translate-x-1/3        
             ${
               showImage2
                 ? "opacity-100"
@@ -189,7 +189,7 @@ export default function Home() {
 
           {/* Leonardo */}
           <img
-            className={`images 2xl:left-1/2 lg:left-1/3 lg:top-1/4 lg:max-w-sm xl:max-w-md md:max-w-xs md:bottom-1/3 md:right-1/4 sm:max-w-[18rem] sm:bottom-36 sm:right-2
+            className={`images lg:-translate-x-1/3 xl:translate-x-1/3     
             ${
               showImage1
                 ? "opacity-100"
@@ -201,7 +201,7 @@ export default function Home() {
 
           {/* Magazine */}
           <img
-            className={`images 2xl:max-w-lg lg:left-1/3 lg:top-1/4 lg:max-w-md md:max-w-xs md:bottom-1/3 md:right-1/4 sm:max-w-[18rem] sm:bottom-36 sm:right-2
+            className={`images lg:-translate-x-1/3 xl:translate-x-1/3    
             ${
               showImage3
                 ? "opacity-100"
@@ -224,7 +224,7 @@ export default function Home() {
               }`}
             >
               NFTs <br /> Marketplace
-              <span className=" subtitles">{titles[0].description}</span>
+              <span className="subtitles">{titles[0].description}</span>
             </a>
             <a
               href={titles[1].link}
@@ -238,7 +238,7 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="hidden mx-auto border-t border-black md:block animate-lineIncrease"></div>
+          <div className="hidden mx-auto border-t border-[#ccc] sm:block animate-lineIncrease"></div>
 
           <div className="flex flex-col justify-between pt-10 space-y-10 xl:justify-around md:items-end md:space-y-0 md:flex-row animate-fade-in-right">
             <a
