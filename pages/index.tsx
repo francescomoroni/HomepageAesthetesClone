@@ -162,13 +162,13 @@ export default function Home() {
         </div>
 
         {/* Images > SM  */}
-        <div>
+        <div className="">
           {/* Marketplace */}
           <img
-            className={`images -translate-x-1/3 xl:-translate-x-1/4     
+            className={`images 2xl:-translate-x-1/4     
             ${
               showImage0
-                ? "opacity-100 "
+                ? "opacity-100  "
                 : "opacity-0 scale-y-110 skew-y-3 transition-none -z-10 "
             } `}
             src={titles[0].image}
@@ -177,7 +177,7 @@ export default function Home() {
 
           {/* Michelangelo */}
           <img
-            className={`images -translate-x-1/3        
+            className={`images         
             ${
               showImage2
                 ? "opacity-100"
@@ -237,7 +237,7 @@ export default function Home() {
               } `}
             >
               {titles[1].title}
-              <span className="text-right subtitles">
+              <span className="md:text-right subtitles">
                 {titles[1].description}
               </span>
             </a>
@@ -265,7 +265,7 @@ export default function Home() {
               }`}
             >
               {titles[3].title}
-              <span className="text-right subtitles">
+              <span className="md:text-right subtitles">
                 {titles[3].description}
               </span>
             </a>
