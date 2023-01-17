@@ -12,10 +12,10 @@
     @apply items-center px-2 text-xl font-semibold transition duration-200 ease-out cursor-pointer sm:text-3xl md:text-6xl lg:text-7xl xl:text-8xl;
   }
   .subtitles {
-    @apply block pt-2 pl-2 text-base font-normal xl:text-lg;
+    @apply block w-3/4 pt-2 pl-2 text-base font-normal lg:text-lg xl:text-xl;
   }
   .images {
-    @apply absolute z-10 hidden transition-all duration-300 ease-out transform sm:block sm:max-w-xs md:max-w-sm sm:bottom-36 sm:right-2 md:left-1/3 md:bottom-1/4 lg:max-w-md lg:bottom-1/4 xl:max-w-lg ;
+    @apply fixed z-10 hidden transition-all duration-300 ease-out transform sm:block sm:bottom-36 sm:right-2 md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 sm:max-w-md lg:max-w-lg xl:max-w-xl ;
   }
   .footerLG {
     @apply absolute inset-x-0 bottom-0 z-20 flex-col items-center justify-between hidden p-4 overflow-hidden bg-black sm:flex text-white/80 lg:flex-row;

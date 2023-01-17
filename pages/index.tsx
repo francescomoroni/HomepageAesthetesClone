@@ -119,7 +119,56 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="relative flex flex-col min-h-screen bg-white ">
+      {/* Images > SM  */}
+      {/* Marketplace */}
+      <img
+        className={`images       
+            ${
+              showImage0
+                ? "opacity-100 "
+                : "opacity-0 scale-y-110 skew-y-3 transition-none -z-10 "
+            } `}
+        src={titles[0].image}
+        alt={titles[0].alt}
+      />
+
+      {/* Michelangelo */}
+      <img
+        className={`images         
+            ${
+              showImage2
+                ? "opacity-100"
+                : "opacity-0 scale-y-110 skew-y-3 transition-none -z-10"
+            } `}
+        src={titles[2].image}
+        alt={titles[2].alt}
+      />
+
+      {/* Leonardo */}
+      <img
+        className={`images      
+            ${
+              showImage1
+                ? "opacity-100"
+                : "transition-none -z-10 opacity-0 scale-y-110 skew-y-3"
+            } `}
+        src={titles[1].image}
+        alt={titles[1].alt}
+      />
+
+      {/* Magazine */}
+      <img
+        className={`images     
+            ${
+              showImage3
+                ? "opacity-100"
+                : "transition-none -z-10 opacity-0 scale-y-110 skew-y-3"
+            } `}
+        src={titles[3].image}
+        alt={titles[3].alt}
+      />
+
+      <div className="relative flex flex-col min-h-screen ">
         {/* Header */}
         <header className="relative flex items-center justify-between px-2 py-4 bg-black shadow-xl">
           <img
@@ -161,60 +210,9 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Images > SM  */}
-        <div>
-          {/* Marketplace */}
-          <img
-            className={`images lg:translate-x-1/3      
-            ${
-              showImage0
-                ? "opacity-100 "
-                : "opacity-0 scale-y-110 skew-y-3 transition-none -z-10 "
-            } `}
-            src={titles[0].image}
-            alt={titles[0].alt}
-          />
-
-          {/* Michelangelo */}
-          <img
-            className={`images lg:translate-x-1/3        
-            ${
-              showImage2
-                ? "opacity-100"
-                : "opacity-0 scale-y-110 skew-y-3 transition-none -z-10"
-            } `}
-            src={titles[2].image}
-            alt={titles[2].alt}
-          />
-
-          {/* Leonardo */}
-          <img
-            className={`images lg:-translate-x-1/3 xl:translate-x-1/3     
-            ${
-              showImage1
-                ? "opacity-100"
-                : "transition-none -z-10 opacity-0 scale-y-110 skew-y-3"
-            } `}
-            src={titles[1].image}
-            alt={titles[1].alt}
-          />
-
-          {/* Magazine */}
-          <img
-            className={`images lg:-translate-x-1/3 xl:translate-x-1/3    
-            ${
-              showImage3
-                ? "opacity-100"
-                : "transition-none -z-10 opacity-0 scale-y-110 skew-y-3"
-            } `}
-            src={titles[3].image}
-            alt={titles[3].alt}
-          />
-        </div>
-
         {/* Main > SM*/}
         <div className="flex-col justify-start flex-1 hidden w-full h-full px-10 pb-16 sm:flex sm:mb-16 sm:justify-around font-montserrat">
-          <div className="flex flex-col justify-between space-y-10 xl:justify-around md:items-end md:space-y-0 md:flex-row animate-fade-in-left">
+          <div className="flex flex-col justify-between space-y-10 2xl:justify-around md:items-end md:space-y-0 md:flex-row animate-fade-in-left">
             {" "}
             <a
               href={titles[0].link}
@@ -240,7 +238,7 @@ export default function Home() {
 
           <div className="hidden mx-auto border-t border-[#ccc] sm:block animate-lineIncrease"></div>
 
-          <div className="flex flex-col justify-between pt-10 space-y-10 xl:justify-around md:items-end md:space-y-0 md:flex-row animate-fade-in-right">
+          <div className="flex flex-col justify-between pt-10 space-y-10 2xl:justify-around md:items-end md:space-y-0 md:flex-row animate-fade-in-right">
             <a
               href={titles[2].link}
               onMouseEnter={() => handleEnter(2)}
