@@ -124,10 +124,10 @@ export default function Home() {
         <header className="relative flex items-center justify-between px-2 py-4 bg-black shadow-xl">
           <img
             src="./logo_registrato.png"
-            className="w-40 mx-auto sm:w-60"
+            className="w-40 mx-auto sm:w-52"
             alt=""
           />
-          <Burger />
+          {/* <Burger /> */}
         </header>
         <p className="subtitleLG">Discover our Fine Art ecosystem</p>
         <p className="subtitleSM">Discover our Fine Art ecosystem</p>
@@ -148,7 +148,7 @@ export default function Home() {
                 {title.description}
               </p>
               <img
-                className={`animate-fade-in h-52 w-52 object-cover object-contain mt-2  `}
+                className={`animate-fade-in h-72 w-72   `}
                 src={title.image}
                 alt={title.title}
               />
