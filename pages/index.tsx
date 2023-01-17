@@ -57,7 +57,7 @@ export default function Home() {
     }
   }, []);
 
-  const [showImage0, setShowImage0] = useState(false);
+  const [showImage0, setShowImage0] = useState(true);
   const [showImage1, setShowImage1] = useState(false);
   const [showImage2, setShowImage2] = useState(false);
   const [showImage3, setShowImage3] = useState(false);
@@ -165,7 +165,7 @@ export default function Home() {
         <div>
           {/* Marketplace */}
           <img
-            className={`images       
+            className={`images -translate-x-1/3     
             ${
               showImage0
                 ? "opacity-100 "
@@ -177,7 +177,7 @@ export default function Home() {
 
           {/* Michelangelo */}
           <img
-            className={`images         
+            className={`images -translate-x-1/3        
             ${
               showImage2
                 ? "opacity-100"
@@ -213,7 +213,7 @@ export default function Home() {
         </div>
 
         {/* Main > SM*/}
-        <div className="flex-col justify-start flex-1 hidden w-full h-full px-10 pb-16 sm:flex sm:mb-16 sm:justify-around font-montserrat">
+        <div className="flex-col justify-start flex-1 hidden w-full h-full px-10 pb-16 sm:flex sm:mb-16 sm:justify-around xl:justify-between font-montserrat">
           <div className="flex flex-col justify-between space-y-10 md:items-end md:space-y-0 md:flex-row animate-fade-in-left">
             {" "}
             <a
