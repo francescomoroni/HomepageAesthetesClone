@@ -128,31 +128,30 @@ export default function Home() {
         <p className="description">Discover our Fine Art ecosystem</p>
 
         {/* Main < SM*/}
-        <div className="grid grid-cols-1 gap-4 p-4 sm:hidden font-montserrat ">
+        <div className="grid max-w-md grid-cols-1 gap-4 p-4 mx-auto sm:hidden font-montserrat ">
           {titles.map((title) => (
             <div
               key={title.id}
-              className="flex flex-col items-center justify-between text-center"
+              className="flex flex-col items-center justify-between p-4 text-center border cursor-pointer rounded-xl bg-rosino/10 hover:bg-rosino/30"
+              onClick={() => handleClickLink(title.id)}
             >
-              <div
-                onClick={() => handleClickLink(title.id)}
-                className="flex items-center justify-between cursor-pointer"
-              >
+              <div className="flex items-center justify-between animate-fade-in-left">
                 <h1 className="text-2xl font-bold">{title.title}</h1>
                 <BsArrowUpRight className="pl-1" />
               </div>
-              <p className="pt-2 text-sm">{title.description}</p>
+              <p className="pt-2 text-sm animate-fade-in-right">
+                {title.description}
+              </p>
               <img
-                onClick={() => handleClickLink(title.id)}
-                className={`animate-fade-in h-40 w-40 object-cover object-contain cursor-pointer pt-2  `}
+                className={`animate-fade-in h-40 w-40 object-cover object-contain mt-4  `}
                 src={title.image}
                 alt={title.title}
               />
-              <div
+              {/* <div
                 className={`${
                   title.id != 3 ? "block" : "hidden"
                 } mx-auto mt-2 border-t border-black/50 animate-lineIncrease`}
-              ></div>
+              ></div> */}
             </div>
           ))}
         </div>
