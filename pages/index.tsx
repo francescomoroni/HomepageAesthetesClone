@@ -163,7 +163,7 @@ export default function Home() {
           {/* Marketplace */}
           <a href={titles[0].link} target="_blank" rel="noreferrer noopener">
             <img
-              className={`images      
+              className={`images xl:-translate-x-1/3      
             ${
               showImage0
                 ? "opacity-100  "
@@ -177,7 +177,7 @@ export default function Home() {
           {/* Michelangelo */}
           <a href={titles[2].link} target="_blank" rel="noreferrer noopener">
             <img
-              className={`images         
+              className={`images xl:-translate-x-1/4        
             ${
               showImage2
                 ? "opacity-100"
@@ -217,7 +217,7 @@ export default function Home() {
         </div>
 
         {/* Main > SM*/}
-        <div className="flex-col justify-start flex-1 hidden w-full h-full px-10 pb-16 sm:flex sm:mb-16 sm:justify-around lg:justify-between ">
+        <div className="flex-col justify-start flex-1 hidden w-full h-full px-10 pb-16 sm:flex sm:mb-16 sm:justify-around 2xl:justify-between ">
           <div className="flex flex-col justify-between space-y-10 md:items-end md:space-y-0 md:flex-row animate-fade-in-left">
             <a
               href={titles[0].link}
