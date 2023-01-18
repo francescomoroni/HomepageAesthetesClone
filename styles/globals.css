@@ -9,7 +9,7 @@
     @apply text-2xl text-white transition-all duration-300 ease-in-out cursor-pointer hover:scale-110 hover:opacity-75;
   }
   .main-titles {
-    @apply flex flex-col max-w-sm px-2 text-xl font-semibold transition duration-200 ease-out cursor-pointer xl:max-w-lg sm:text-3xl md:text-6xl lg:text-7xl xl:text-8xl;
+    @apply flex flex-col max-w-sm px-2 text-xl font-semibold transition duration-200 ease-out cursor-pointer xl:max-w-lg sm:text-3xl md:text-6xl lg:text-7xl;
   }
   .subtitles {
     @apply  pt-2 text-base font-normal lg:text-lg xl:text-xl;
