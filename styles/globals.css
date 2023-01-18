@@ -16,7 +16,7 @@
   }
 
   .images {
-    @apply fixed z-10 hidden transition-all duration-300 ease-out transform sm:block sm:bottom-36 sm:right-1 md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 sm:max-w-sm md:max-w-xs lg:max-w-sm xl:max-w-md 2xl:max-w-xl;
+    @apply fixed z-10 hidden transition-all duration-300 ease-out transform sm:block sm:bottom-36 sm:right-1 md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 sm:max-w-sm md:max-w-xs lg:max-w-sm 2xl:max-w-lg;
   }
   .footerLG {
     @apply absolute inset-x-0 bottom-0 z-20 flex-col items-center justify-between hidden p-4 overflow-hidden bg-black sm:flex text-white/80 lg:flex-row;
