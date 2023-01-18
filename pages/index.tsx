@@ -270,6 +270,7 @@ export default function Home() {
           <div className="hidden mx-auto border-t border-[#ccc] sm:block animate-lineIncrease -z-10"></div>
 
           <div className="flex flex-col justify-between pt-10 space-y-10 md:items-end md:space-y-0 md:space-x-4 lg:space-x-0 md:flex-row animate-fade-in-right">
+            {/* Michelangelo */}
             <a
               href={titles[2].link}
               target="_blank"
@@ -280,9 +281,12 @@ export default function Home() {
               }`}
             >
               {titles[2].title}
-              <span className="pl-2 subtitles">{titles[2].description}</span>
+              <span className="pt-2 pl-2 subtitles">
+                {titles[2].description}
+              </span>
             </a>
 
+            {/* Magazine */}
             <a
               href={titles[3].link}
               target="_blank"
@@ -293,7 +297,7 @@ export default function Home() {
               }`}
             >
               {titles[3].title}
-              <span className="md:text-right subtitles">
+              <span className="pt-2 md:text-right subtitles ">
                 {titles[3].description}
               </span>
             </a>
