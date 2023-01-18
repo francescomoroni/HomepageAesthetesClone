@@ -1,4 +1,3 @@
-import { IoIosCloseCircleOutline } from "react-icons/io";
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import Link from "next/link";
@@ -44,7 +43,7 @@ export default function Cookies({ open, setOpen }: any) {
                   </p>
                   <div className="items-center justify-between sm:flex">
                     <Link href="https://marketplace.aesthetes.com/legal/privacy">
-                      <p className="font-semibold cursor-pointer hover:underline focus:outline-none ">
+                      <p className="px-2 font-semibold hover:underline">
                         More Details
                       </p>
                     </Link>
@@ -53,7 +52,7 @@ export default function Cookies({ open, setOpen }: any) {
                         setOpen(false);
                         localStorage.setItem("cookies", "true");
                       }}
-                      className="px-8 pt-1 mt-4 text-center text-white bg-black rounded-md cursor-pointer sm:mt-0"
+                      className="px-8 pt-1 mt-4 text-center text-white bg-black rounded-md cursor-pointer sm:mt-0 hover:underline"
                     >
                       ACCEPT
                     </p>

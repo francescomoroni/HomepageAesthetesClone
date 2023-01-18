@@ -83,9 +83,9 @@ module.exports = {
         illuminate: "illuminate 2s ease forwards",
       },
       fontFamily: {
-        montserrat: ["Montserrat", "sans-serif"],
+        nunito: ["Nunito", "sans-serif"],
         syne: ["Syne", "sans-serif"],
-        sans: ["Nunito", "sans-serif"],
+        sans: ["Montserrat", "sans-serif"],
       },
     },
   },

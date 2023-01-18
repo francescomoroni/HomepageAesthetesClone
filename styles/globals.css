@@ -25,10 +25,10 @@
     @apply z-20 flex flex-col items-center justify-between p-4 overflow-hidden bg-black text-white/80 sm:hidden;
   }
   .subtitleLG {
-    @apply hidden pt-8 mr-2 text-2xl font-extrabold text-center text-white animate-illuminate sm:block md:text-4xl font-montserrat;
+    @apply hidden pt-8 mr-2 text-2xl font-extrabold text-center text-white animate-illuminate sm:block md:text-4xl ;
   }
   .subtitleSM {
-    @apply px-4 pt-6 text-2xl font-extrabold text-center sm:hidden font-montserrat;
+    @apply px-4 pt-6 text-2xl font-extrabold text-center sm:hidden ;
   }
 
 }
