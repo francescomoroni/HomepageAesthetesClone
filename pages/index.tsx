@@ -12,6 +12,8 @@ export default function Home() {
       title: "NFTs Marketplace",
       description:
         "The first Phygital NFTs marketplace, for cutting edge Fine Art collectors",
+      description1: "The first Phygital NFTs marketplace, ",
+      description2: "for cutting edge Fine Art collectors",
       image: "./marketplace.png",
       alt: "The Aesthetes Marketplace",
       link: "https://marketplace.aesthetes.com/",
@@ -20,6 +22,8 @@ export default function Home() {
       id: 1,
       title: "Leonardo",
       description: "Become an Art creator minting your own collection",
+      description1: "Become an Art creator minting ",
+      description2: "your own collection",
       image: "./leonardo.png",
       alt: "Leonardo, our NFTs minter",
       link: "https://leonardo.aesthetes.com/",
@@ -28,6 +32,7 @@ export default function Home() {
       id: 2,
       title: "Michelangelo",
       description: "Our Art Space in the Metaverse",
+      description1: "Our Art Space in the Metaverse",
       image: "./metaverse.png",
       alt: "Michelangelo, our Metaverse platform",
       link: "https://gallery.aesthetes.com/",
@@ -36,6 +41,7 @@ export default function Home() {
       id: 3,
       title: "Magazine",
       description: "A window on the Fine Art industry",
+      description1: "A window on the Fine Art industry",
       image: "./magazine.png",
       alt: "The Aesthetes Magazine",
       link: "https://artmagz.com/",
@@ -109,12 +115,15 @@ export default function Home() {
         </header>
 
         {/* Subtitle SM */}
-        <p className="subtitleSM animate-fade-in">
+        <p className="mainSubtitleSM animate-fade-in">
           Discover our Fine Art ecosystem
         </p>
 
         {/* Subtitle > SM */}
-        <div className="flex flex-wrap justify-center">
+        <p className="mainSubtitleLG animate-fade-in">
+          Discover our Fine Art ecosystem
+        </p>
+        {/* <div className="flex justify-center">
           <span style={{ animationDelay: "0.5s" }} className=" subtitleLG">
             Discover{" "}
           </span>
@@ -130,7 +139,7 @@ export default function Home() {
           <span style={{ animationDelay: "2.5s" }} className=" subtitleLG">
             ecosystem
           </span>
-        </div>
+        </div> */}
 
         {/* Main < SM */}
         <div className="grid max-w-md grid-cols-1 gap-4 p-4 mx-auto sm:hidden ">
@@ -219,6 +228,7 @@ export default function Home() {
         {/* Main > SM*/}
         <div className="flex-col justify-start flex-1 hidden w-full h-full px-10 pb-16 sm:flex sm:mb-16 sm:justify-around 2xl:justify-between ">
           <div className="flex flex-col justify-between space-y-10 md:items-end md:space-y-0 md:flex-row animate-fade-in-left">
+            {/* Marketplace */}
             <a
               href={titles[0].link}
               target="_blank"
@@ -229,11 +239,15 @@ export default function Home() {
               }`}
             >
               {titles[0].title}
-
+              <span className="items-start pt-2 pl-2 subtitles">
+                {titles[0].description1}
+              </span>
               <span className="items-start pl-2 subtitles">
-                {titles[0].description}
+                {titles[0].description2}
               </span>
             </a>
+
+            {/* Leonardo */}
             <a
               href={titles[1].link}
               target="_blank"
@@ -244,8 +258,11 @@ export default function Home() {
               } `}
             >
               {titles[1].title}
+              <span className="pt-2 md:text-right subtitles">
+                {titles[1].description1}
+              </span>
               <span className="md:text-right subtitles">
-                {titles[1].description}
+                {titles[1].description2}
               </span>
             </a>
           </div>
