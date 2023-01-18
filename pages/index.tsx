@@ -129,8 +129,26 @@ export default function Home() {
           />
           {/* <Burger /> */}
         </header>
-        <p className="subtitleLG">Discover our Fine Art ecosystem</p>
-        <p className="subtitleSM">Discover our Fine Art ecosystem</p>
+        <div className="flex flex-wrap justify-center">
+          <span style={{ animationDelay: "0.5s" }} className=" subtitleLG">
+            Discover{" "}
+          </span>
+          <span style={{ animationDelay: "1s" }} className=" subtitleLG">
+            our{" "}
+          </span>
+          <span style={{ animationDelay: "1.5s" }} className=" subtitleLG">
+            Fine{" "}
+          </span>
+          <span style={{ animationDelay: "2s" }} className=" subtitleLG">
+            Art{" "}
+          </span>
+          <span style={{ animationDelay: "2.5s" }} className=" subtitleLG">
+            ecosystem
+          </span>
+        </div>
+        <p className="subtitleSM animate-fade-in">
+          Discover our Fine Art ecosystem
+        </p>
 
         {/* Main < SM*/}
         <div className="grid max-w-md grid-cols-1 gap-4 p-4 mx-auto sm:hidden font-montserrat ">

@@ -32,7 +32,6 @@ module.exports = {
           },
         },
 
-
         "fade-in": {
           from: { opacity: 0 },
           to: { opacity: 1 },
@@ -62,7 +61,18 @@ module.exports = {
             width: "75%",
           },
         },
+        illuminate: {
+          from: {
+            color: "#FFFFFF",
+            opacity: 0.5,
+          },
+          to: {
+            color: "#000000",
+            opacity: 1,
+          },
+        },
       },
+
       animation: {
         downEnterLarge: "downEnterLarge 1.8s ease forwards",
         downEnterSmall: "downEnterSmall 1.8s ease forwards",
@@ -70,6 +80,7 @@ module.exports = {
         lineIncrease: "lineIncrease 2s ease forwards",
         "fade-in-left": "fade-in-left 1.5s ease forwards",
         "fade-in-right": "fade-in-right 1.5s ease forwards",
+        illuminate: "illuminate 2s ease forwards",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
