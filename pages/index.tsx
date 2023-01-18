@@ -95,16 +95,16 @@ export default function Home() {
 
   const handleClickLink = (opera: number) => {
     if (opera === 0) {
-      window.open("https://marketplace.aesthetes.com/");
+      window.open("https://marketplace.aesthetes.com/", "_blank");
     }
     if (opera === 1) {
-      window.open("https://leonardo.aesthetes.com/");
+      window.open("https://leonardo.aesthetes.com/", "_blank");
     }
     if (opera === 2) {
-      window.open("https://gallery.aesthetes.com/");
+      window.open("https://gallery.aesthetes.com/", "_blank");
     }
     if (opera === 3) {
-      window.open("https://magazine.aesthetes.com/");
+      window.open("https://magazine.aesthetes.com/", "_blank");
     }
   };
 
@@ -153,10 +153,10 @@ export default function Home() {
         {/* Main < SM*/}
         <div className="grid max-w-md grid-cols-1 gap-4 p-4 mx-auto sm:hidden font-montserrat ">
           {titles.map((title) => (
-            <div
+            <a
+              href={title.link}
               key={title.id}
               className="flex flex-col items-center justify-between p-4 text-center border cursor-pointer rounded-xl bg-rosino/10 hover:bg-rosino/30 group"
-              onClick={() => handleClickLink(title.id)}
             >
               <div className="flex items-center justify-between animate-fade-in-left">
                 <h1 className="text-2xl font-bold">{title.title}</h1>
@@ -170,64 +170,70 @@ export default function Home() {
                 src={title.image}
                 alt={title.title}
               />
-              {/* <div
-                className={`${
-                  title.id != 3 ? "block" : "hidden"
-                } mx-auto mt-2 border-t border-black/50 animate-lineIncrease`}
-              ></div> */}
-            </div>
+            </a>
           ))}
         </div>
 
         {/* Images > SM  */}
         <div className="">
           {/* Marketplace */}
-          <img
-            className={`images 2xl:-translate-x-1/4     
+          <a href={titles[0].link}>
+            <img
+              //onClick={() => handleClickLink(titles[0].id)}
+              className={`images      
             ${
               showImage0
                 ? "opacity-100  "
                 : "opacity-0 scale-y-110 skew-y-3 transition-none -z-10 "
             } `}
-            src={titles[0].image}
-            alt={titles[0].alt}
-          />
+              src={titles[0].image}
+              alt={titles[0].alt}
+            />
+          </a>
 
           {/* Michelangelo */}
-          <img
-            className={`images         
+          <a href={titles[2].link}>
+            <img
+              //onClick={() => handleClickLink(titles[2].id)}
+              className={`images         
             ${
               showImage2
                 ? "opacity-100"
                 : "opacity-0 scale-y-110 skew-y-3 transition-none -z-10"
             } `}
-            src={titles[2].image}
-            alt={titles[2].alt}
-          />
+              src={titles[2].image}
+              alt={titles[2].alt}
+            />
+          </a>
 
           {/* Leonardo */}
-          <img
-            className={`images      
+          <a href={titles[1].link}>
+            <img
+              // onClick={() => handleClickLink(titles[1].id)}
+              className={`images      
             ${
               showImage1
                 ? "opacity-100"
                 : "transition-none -z-10 opacity-0 scale-y-110 skew-y-3"
             } `}
-            src={titles[1].image}
-            alt={titles[1].alt}
-          />
-
+              src={titles[1].image}
+              alt={titles[1].alt}
+            />
+          </a>
           {/* Magazine */}
-          <img
-            className={`images     
+          <a href={titles[3].link}>
+            <img
+              // onClick={() => handleClickLink(titles[3].id)}
+              className={`images     
             ${
               showImage3
                 ? "opacity-100"
                 : "transition-none -z-10 opacity-0 scale-y-110 skew-y-3"
             } `}
-            src={titles[3].image}
-            alt={titles[3].alt}
-          />
+              src={titles[3].image}
+              alt={titles[3].alt}
+            />
+          </a>
         </div>
 
         {/* Main > SM*/}
@@ -236,7 +242,7 @@ export default function Home() {
             {" "}
             <a
               href={titles[0].link}
-              onMouseEnter={() => handleEnter(0)}
+              onMouseEnter={() => handleEnter(titles[0].id)}
               className={` main-titles  items-start  ${
                 showImage0 ? "text-black" : "text-[#ccc]"
               }`}
@@ -249,7 +255,7 @@ export default function Home() {
             </a>
             <a
               href={titles[1].link}
-              onMouseEnter={() => handleEnter(1)}
+              onMouseEnter={() => handleEnter(titles[1].id)}
               className={`main-titles items-start md:items-end ${
                 showImage1 ? "text-black" : "text-[#ccc] "
               } `}
@@ -266,7 +272,7 @@ export default function Home() {
           <div className="flex flex-col justify-between pt-10 space-y-10 md:items-end md:space-y-0 md:space-x-4 lg:space-x-0 md:flex-row animate-fade-in-right">
             <a
               href={titles[2].link}
-              onMouseEnter={() => handleEnter(2)}
+              onMouseEnter={() => handleEnter(titles[2].id)}
               className={`main-titles  items-start   ${
                 showImage2 ? "text-black" : "text-[#ccc]"
               }`}
@@ -277,7 +283,7 @@ export default function Home() {
 
             <a
               href={titles[3].link}
-              onMouseEnter={() => handleEnter(3)}
+              onMouseEnter={() => handleEnter(titles[3].id)}
               className={`main-titles items-start md:items-end ${
                 showImage3 ? "text-black" : "text-[#ccc]"
               }`}
