@@ -44,7 +44,7 @@ export default function Home() {
       description: "A window on the Fine Art industry",
       image: "./magazine.png",
       alt: "The Aesthetes Magazine",
-      link: "https://magazine.aesthetes.com/",
+      link: "https://artmagz.com/",
     },
   ];
 
@@ -90,21 +90,6 @@ export default function Home() {
       setShowImage2(false);
 
       setShowImage3(true);
-    }
-  };
-
-  const handleClickLink = (opera: number) => {
-    if (opera === 0) {
-      window.open("https://marketplace.aesthetes.com/", "_blank");
-    }
-    if (opera === 1) {
-      window.open("https://leonardo.aesthetes.com/", "_blank");
-    }
-    if (opera === 2) {
-      window.open("https://gallery.aesthetes.com/", "_blank");
-    }
-    if (opera === 3) {
-      window.open("https://magazine.aesthetes.com/", "_blank");
     }
   };
 
@@ -179,7 +164,6 @@ export default function Home() {
           {/* Marketplace */}
           <a href={titles[0].link}>
             <img
-              //onClick={() => handleClickLink(titles[0].id)}
               className={`images      
             ${
               showImage0
@@ -194,7 +178,6 @@ export default function Home() {
           {/* Michelangelo */}
           <a href={titles[2].link}>
             <img
-              //onClick={() => handleClickLink(titles[2].id)}
               className={`images         
             ${
               showImage2
@@ -209,7 +192,6 @@ export default function Home() {
           {/* Leonardo */}
           <a href={titles[1].link}>
             <img
-              // onClick={() => handleClickLink(titles[1].id)}
               className={`images      
             ${
               showImage1
@@ -223,7 +205,6 @@ export default function Home() {
           {/* Magazine */}
           <a href={titles[3].link}>
             <img
-              // onClick={() => handleClickLink(titles[3].id)}
               className={`images     
             ${
               showImage3
@@ -239,9 +220,10 @@ export default function Home() {
         {/* Main > SM*/}
         <div className="flex-col justify-start flex-1 hidden w-full h-full px-10 pb-16 sm:flex sm:mb-16 sm:justify-around 2xl:justify-between font-montserrat">
           <div className="flex flex-col justify-between space-y-10 md:items-end md:space-y-0 md:flex-row animate-fade-in-left">
-            {" "}
             <a
               href={titles[0].link}
+              target="_blank"
+              rel="noreferrer noopener"
               onMouseEnter={() => handleEnter(titles[0].id)}
               className={` main-titles  items-start  ${
                 showImage0 ? "text-black" : "text-[#ccc]"
@@ -255,6 +237,8 @@ export default function Home() {
             </a>
             <a
               href={titles[1].link}
+              target="_blank"
+              rel="noreferrer noopener"
               onMouseEnter={() => handleEnter(titles[1].id)}
               className={`main-titles items-start md:items-end ${
                 showImage1 ? "text-black" : "text-[#ccc] "
@@ -267,11 +251,13 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="hidden mx-auto border-t border-[#ccc] sm:block animate-lineIncrease"></div>
+          <div className="hidden mx-auto border-t border-[#ccc] sm:block animate-lineIncrease -z-10"></div>
 
           <div className="flex flex-col justify-between pt-10 space-y-10 md:items-end md:space-y-0 md:space-x-4 lg:space-x-0 md:flex-row animate-fade-in-right">
             <a
               href={titles[2].link}
+              target="_blank"
+              rel="noreferrer noopener"
               onMouseEnter={() => handleEnter(titles[2].id)}
               className={`main-titles  items-start   ${
                 showImage2 ? "text-black" : "text-[#ccc]"
@@ -283,6 +269,8 @@ export default function Home() {
 
             <a
               href={titles[3].link}
+              target="_blank"
+              rel="noreferrer noopener"
               onMouseEnter={() => handleEnter(titles[3].id)}
               className={`main-titles items-start md:items-end ${
                 showImage3 ? "text-black" : "text-[#ccc]"
@@ -360,6 +348,8 @@ export default function Home() {
               <p className="text-sm sm:text-base">|</p>
               <a
                 href="https://whitepaper.aesthetes.com/whitepaper.pdf"
+                target="_blank"
+                rel="noreferrer noopener"
                 className="text-sm sm:text-base font-montserrat hover:underline"
               >
                 WHITEPAPER
@@ -367,6 +357,8 @@ export default function Home() {
               <p className="text-sm sm:text-base">|</p>
               <a
                 href="https://company.aesthetes.art"
+                target="_blank"
+                rel="noreferrer noopener"
                 className="text-sm sm:text-base font-montserrat hover:underline"
               >
                 ABOUT US
